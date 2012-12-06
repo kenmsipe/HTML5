@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Untitled Document</title>
+<meta charset="utf-8" />
+<style type="text/css">
+*{font-family:verdana,arial,"Times Roman";
+}
+h1{
+font-size:16px;
+}
+h2{
+font-size:14px;
+}
+h3{
+font-size:13px;
+}
+p{
+font-size:12px;
+}
+nav {
+padding:2px 6px;
+background-color:#ccc;
+color:blue;
+width:100%;
+height:26px;
+}
+section{
+width:366px;
+float:left;
+}
+section > h1{
+padding:4px 8px;
+}
+article{
+padding:4px 8px;
+width:350px;
+background-color:#ccc;
+float:left;
+}
+#article-section1{
+margin-right:10px;
+}
+#content-wrapper{
+width:850px;
+position:relative;
+}
+#article-section1,#article-section2{
+/*top:20px;*/
+margin-top:10px;
+margin-bottom:10px;
+border:1px solid blue;
+position:relative;
+}
+#bottom{
+width:100%;
+clear:both;
+position:relative;
+}
+</style>
+<script>
+document.createElement("nav");
+document.createElement("header");
+document.createElement("canvas");
+document.createElement("section");
+document.createElement("article");
+document.createElement("figure");
+document.createElement("footer");
+
+function convertIt(){
+var sout;
+sout='<table width="250" cellspacing="3" cellpadding="4" border="1"><th align="left">Farenheit</th><th align="left">Celsius</th>';
+for(var i=20;i<=40;i=i+5){
+var farenheit=i;
+var celsius= parseInt((5/9)* (farenheit -32));
+sout=sout + '<tr>'
+	for(var j=1;j<=1;j++){
+	sout= sout+ '<td>'+farenheit+'</td><td>'+celsius+'</td>';
+	}
+sout=sout + '<tr>';
+
+}
+sout= sout +'</table>';
+ var writeChart = document.getElementById('chart');
+ 
+ writeChart.innerHTML =sout;
+
+}
+
+function drawItAgain(){
+var canvas2= document.getElementById("drawB");
+var ctz = canvas2.getContext("2d");
+//rectangle1
+ctz.fillStyle="rga(0,210,180)";
+ctz.fillRect(10,20,200,100)//x,y,width,height
+//rectangle2
+ctz.fillStyle = "rgb(210,0,240)";
+ctz.fillRect(30,60,100,100);
+//rectangle3
+ctz.fillStyle = "rgb(0,130,180)";
+ctz.fillRect(60,70,180,200);
+}
+
+</script>
+</head>
+
+<body onload="convertIt();drawItAgain()">
+<header>
+<nav>
+<a href="#" >Nav Item One</a> | <a href="#">Nav Item Two</a> |<a href="#">Nav Item Three</a> | <a href="#">Nav Item Four</a>
+</nav>
+</header>
+
+<section id="content-wrapper">
+<section id="article-section1">
+<h1>Section 1</h1>
+<article>
+<h2>Article 1</h2>
+<section>
+<h3>Article 1 Section A</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales volutpat lectus, convallis luctus dui gravida vulputate. </p>
+<figure id="chart" ></figure>
+</section>
+<section>
+<h3>Article 1 Section B</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales volutpat lectus, convallis luctus dui gravida vulputate. </p>
+</section>
+<footer>
+<small>Footer Article 1</small>
+</footer>
+</article>
+</section>
+<section id="article-section2">
+<h1>Section 2</h1>
+<article>
+<h2>Article 2</h2>
+<section>
+<h3>Article 2 Section A</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales volutpat lectus, convallis luctus dui gravida vulputate. </p>
+</section>
+<section>
+<h3>Article 2 Section B</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales volutpat lectus, convallis luctus dui gravida vulputate. </p>
+<canvas id="drawB" width="250" height="200"></canvas>
+</section>
+<footer>
+<small>Footer Article 2</small>
+</footer>
+</article>
+</section>
+<footer id="bottom">
+<a href="#"><p><img src="#" style="margin-right:10px; margin-bottom:10px; border:1px solid blue; width:50px; height:50px; float:left;" alt="" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales volutpat lectus, convallis luctus dui .</p></a>
+</footer>
+</section>
+
+</body>
+</html>
